@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jellybytes</title>
+    <meta
+      name="description"
+      content="Jellybytes builds small, thoughtful software: local-first experiments, playful tools, and careful interfaces."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="banner" aria-labelledby="site-title">
+        <div class="banner-copy">
+          <p class="eyebrow">jellybytes.dev</p>
+          <h1 id="site-title">Small software, local-first experiments, careful interfaces.</h1>
+          <p class="banner-text">
+            A compact home for projects including Alien Learns, creative tools,
+            and future studio notes.
+          </p>
+        </div>
+        <div class="banner-duck">
+          <img
+            class="duck-sprite is-visible"
+            src="./assets/duck-bored.png"
+            alt="Pixel duck mascot in calm mode"
+            data-duck-bored
+          />
+          <img
+            class="duck-sprite"
+            src="./assets/duck-alert.png"
+            alt="Pixel duck mascot in alert mode"
+            data-duck-alert
+          />
+        </div>
+      </section>
+
+      <section class="terminal" aria-label="Jellybytes terminal">
+        <div class="terminal-topbar">
+          <div class="traffic-lights" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="terminal-tabs" role="tablist" aria-label="Terminal tabs">
+            <button
+              class="terminal-tab is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-projects"
+              id="tab-projects"
+              data-tab="projects"
+            >
+              Projects
+            </button>
+            <button
+              class="terminal-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-about"
+              id="tab-about"
+              data-tab="about"
+            >
+              About
+            </button>
+            <button
+              class="terminal-tab"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-contact"
+              id="tab-contact"
+              data-tab="contact"
+            >
+              Contact
+            </button>
+          </div>
+          <button class="byte-button" type="button" data-duck>poke the byte</button>
+        </div>
+
+        <div class="terminal-menu" aria-label="Quick links">
+          <a href="https://github.com/diegovalverde">GitHub</a>
+          <span>·</span>
+          <a href="mailto:info@jellybytes.dev">info@jellybytes.dev</a>
+        </div>
+
+        <div class="terminal-body">
+          <section
+            class="terminal-panel is-active"
+            id="panel-projects"
+            role="tabpanel"
+            aria-labelledby="tab-projects"
+            data-panel="projects"
+          >
+            <pre class="terminal-copy"><code>> ls projects/
+
+01  Alien Learns
+    Reading-first language learning for Apple platforms.
+    Stack: SwiftUI, Swift, local inference.
+    Status: active development.
+
+02  Small Weird Utilities
+    Tiny experiments, browser toys, and useful side tools.
+    Stack: vanilla JS, prototypes, fast iteration.
+    Status: rotating collection.
+
+03  Jellybytes Platform
+    The studio layer: landing pages, notes, releases, public home.
+    Status: beginning here.</code></pre>
+          </section>
+
+          <section
+            class="terminal-panel"
+            id="panel-about"
+            role="tabpanel"
+            aria-labelledby="tab-about"
+            hidden
+            data-panel="about"
+          >
+            <pre class="terminal-copy"><code>> cat about.txt
+
+Jellybytes is a small software studio identity for compact projects.
+
+The priorities are simple:
+- local-first when possible
+- reading and interaction quality first
+- playful tone without interface noise
+- tools small enough to ship and maintain
+
+The old duck stays.</code></pre>
+          </section>
+
+          <section
+            class="terminal-panel"
+            id="panel-contact"
+            role="tabpanel"
+            aria-labelledby="tab-contact"
+            hidden
+            data-panel="contact"
+          >
+            <pre class="terminal-copy"><code>> cat contact.txt
+
+Email: info@jellybytes.dev
+GitHub: github.com/diegovalverde
+
+Current plan:
+- use forwarding for info@jellybytes.dev
+- keep the site static
+- expand this page as more projects ship</code></pre>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
