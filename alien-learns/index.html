@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alien Learns</title>
+    <meta
+      name="description"
+      content="Alien Learns is a quiet language-learning experiment built around reading, context, and curiosity."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f7f2e8'/%3E%3Cellipse cx='22' cy='28' rx='7' ry='10' fill='%232d2a26'/%3E%3Cellipse cx='42' cy='28' rx='7' ry='10' fill='%232d2a26'/%3E%3Ccircle cx='32' cy='44' r='6' fill='%23356d6b'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#top" aria-label="Alien Learns home">
+          <span class="brand-mark">✦</span>
+          <span class="brand-text">Alien Learns</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#how-it-works">How it works</a>
+          <a href="#beta">Join beta</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">A language app for the wonderfully strange.</p>
+            <h1>Learn through stories, context, and curiosity.</h1>
+            <p class="hero-text">
+              Alien Learns is a reading-first language experience. Tap into short
+              passages, discover new words in place, and build understanding one
+              sentence at a time.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#beta">Request beta access</a>
+              <a class="button button-secondary" href="#how-it-works">See how it works</a>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-panel">
+              <div class="hero-stars">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="hero-orbit"></div>
+              <div class="hero-caption">
+                <p>Observing carefully.</p>
+                <p>Learning in context.</p>
+              </div>
+              <div class="translator-frame">
+                <div class="translator-screen"></div>
+                <img
+                  class="translator-figure"
+                  src="./assets/alien-translator.png"
+                  alt=""
+                  width="680"
+                  height="487"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="proof-strip" aria-label="Summary">
+          <article>
+            <h2>Reading comes first</h2>
+            <p>Stories stay central. Translation, review, and guidance stay light.</p>
+          </article>
+          <article>
+            <h2>Context beats drills</h2>
+            <p>Words arrive inside scenes and sentences instead of isolated lists.</p>
+          </article>
+          <article>
+            <h2>Local by design</h2>
+            <p>The app is being built around private, on-device language help.</p>
+          </article>
+        </section>
+
+        <section class="section section-story" id="how-it-works">
+          <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2>More than translation. A calmer way to learn.</h2>
+            <p>
+              The experience is meant to feel closer to a small illustrated reader
+              than a noisy lesson dashboard.
+            </p>
+          </div>
+
+          <div class="reading-preview">
+            <div class="preview-header">
+              <span>Story 12</span>
+              <span>Spanish → English</span>
+            </div>
+            <div class="preview-body">
+              <p>
+                María toma un <mark>café</mark> en la plaza. Hace sol y ella está
+                feliz.
+              </p>
+              <div class="translation-card">
+                <div>
+                  <p class="card-label">Word</p>
+                  <p class="card-term">café</p>
+                </div>
+                <div>
+                  <p class="card-label">Meaning</p>
+                  <p class="card-meaning">coffee</p>
+                </div>
+              </div>
+            </div>
+            <div class="preview-sidebar">
+              <p class="sidebar-title">New words</p>
+              <ul>
+                <li><span>plaza</span><span>square</span></li>
+                <li><span>sol</span><span>sun</span></li>
+                <li><span>feliz</span><span>happy</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-values">
+          <div class="section-heading">
+            <p class="eyebrow">Why this shape</p>
+            <h2>Built for people who want to read, not grind.</h2>
+          </div>
+
+          <div class="value-grid">
+            <article>
+              <h3>Short, readable sessions</h3>
+              <p>Small passages make it easy to return often without friction.</p>
+            </article>
+            <article>
+              <h3>Instant word support</h3>
+              <p>Tap a word and get a quick gloss without losing the flow.</p>
+            </article>
+            <article>
+              <h3>Quiet repetition</h3>
+              <p>Useful words come back over time instead of becoming homework.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-beta" id="beta">
+          <div class="beta-art">
+            <img
+              src="./assets/alien-earth-approach.png"
+              alt="Alien approaching Earth"
+              width="768"
+              height="576"
+            />
+          </div>
+          <div class="beta-copy">
+            <p class="eyebrow">Beta</p>
+            <h2>Help shape the first version.</h2>
+            <p>
+              I’m sharing early builds with a small group of testers. If you enjoy
+              language learning, reading, or gently odd software, I’d like to hear
+              what works and what does not.
+            </p>
+            <a class="button button-primary" href="mailto:hello@jellybytes.dev?subject=Alien%20Learns%20beta">
+              Ask for beta access
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Alien Learns</p>
+        <p>Curious by nature. Connected by choice.</p>
+      </footer>
+    </div>
+  </body>
+</html>
