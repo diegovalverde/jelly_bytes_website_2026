@@ -187,12 +187,21 @@ h1 {
 
 .terminal-copy {
   margin: 0;
-  padding: 26px 28px 30px;
+  padding: 26px 28px 18px;
   color: var(--ink);
   font-size: 0.98rem;
   line-height: 1.7;
   white-space: pre-wrap;
   text-shadow: 0 0 10px rgba(125, 255, 155, 0.08);
+}
+
+.project-links {
+  padding: 0 28px 30px;
+}
+
+.project-link {
+  display: inline-flex;
+  text-decoration: none;
 }
 
 @media (max-width: 760px) {
