@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jellybytes</title>
+    <title>Mechanistic Interpretability · Jellybytes</title>
     <meta
       name="description"
-      content="Jellybytes builds small, thoughtful software: local-first experiments, playful tools, and careful interfaces."
+      content="Interactive mechanistic-interpretability experiments from Jellybytes."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,9 +21,9 @@
       <section class="banner" aria-labelledby="site-title">
         <div class="banner-copy">
           <p class="eyebrow">jellybytes.dev</p>
-          <h1 id="site-title">Artisanal software.</h1>
+          <h1 id="site-title">Mechanistic<br />interpretability.</h1>
           <p class="banner-text">
-            Small projects, creative tools.
+            Interactive experiments for looking inside small transformer models.
           </p>
         </div>
         <div class="banner-duck">
@@ -101,29 +101,34 @@
             aria-labelledby="tab-projects"
             data-panel="projects"
           >
-            <pre class="terminal-copy"><code>> ls projects/
-
-01  Alien Learns
-    Reading-first language learning for Apple platforms.
-    Stack: SwiftUI, Swift, local inference.
-    Status: active development.
-
-02  Small Weird Utilities
-    Tiny experiments, browser toys, and useful side tools.
-    Stack: vanilla JS, prototypes, fast iteration.
-    Status: rotating collection.
-
-03  Jellybytes Platform
-    The studio layer: landing pages, notes, releases, public home.
-    Status: beginning here.
-
-04  Othello-GPT Probe Toy
-    Interactive board-state, legality, and preference-probe explorer.
-    Stack: browser-side ONNX inference, React, TypeScript.
-    Status: live experiment.</code></pre>
-            <div class="project-links" aria-label="Project links">
-              <a class="byte-button project-link" href="./alien-learns/">Open Alien Learns</a>
-              <a class="byte-button project-link" href="./othello-probe/">Open Othello-GPT Probe Toy</a>
+            <div class="interpretability-intro">
+              <p class="terminal-prompt">&gt; select an experiment/</p>
+              <p>
+                These browser-native toys turn learned representations into
+                something you can inspect, perturb, and reason about.
+              </p>
+            </div>
+            <div class="experiment-grid" aria-label="Mechanistic interpretability experiments">
+              <article class="experiment-card">
+                <p class="experiment-number">01 / BOARD GAMES</p>
+                <h2>Othello-GPT<br />Probe Toy</h2>
+                <p>
+                  Explore how a transformer represents board state, legal moves,
+                  and move preferences while playing Othello.
+                </p>
+                <p class="experiment-stack">ONNX · React · TypeScript</p>
+                <a class="byte-button project-link" href="./othello-probe/">Open Othello toy <span aria-hidden="true">→</span></a>
+              </article>
+              <article class="experiment-card">
+                <p class="experiment-number">02 / ARITHMETIC</p>
+                <h2>Addition-GPT<br />Probe Toy</h2>
+                <p>
+                  Follow a tiny transformer as it adds two numbers and inspect
+                  the representations that carry digits and carries.
+                </p>
+                <p class="experiment-stack">ONNX · React · TypeScript</p>
+                <a class="byte-button project-link" href="./addition-probe/">Open addition toy <span aria-hidden="true">→</span></a>
+              </article>
             </div>
           </section>
 
@@ -137,11 +142,11 @@
           >
             <pre class="terminal-copy"><code>> cat about.txt
 
-Jellybytes is a small software studio.
- - Small apps.
- - Experiments.
- - Playful code 
+Jellybytes makes small, legible software.
 
+This collection is for mechanistic interpretability:
+understanding what neural networks learn internally,
+one concrete experiment at a time.
 
 The old duck stays.</code></pre>
           </section>
