@@ -3,173 +3,63 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mechanistic Interpretability · Jellybytes</title>
-    <meta
-      name="description"
-      content="Interactive mechanistic-interpretability experiments from Jellybytes."
-    />
+    <title>Jellybytes · Mechanistic Interpretability</title>
+    <meta name="description" content="Interactive mechanistic-interpretability experiments from Jellybytes." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <main class="shell">
-      <section class="banner" aria-labelledby="site-title">
-        <div class="banner-copy">
-          <p class="eyebrow">jellybytes.dev</p>
-          <h1 id="site-title">Mechanistic<br />interpretability.</h1>
-          <p class="banner-text">
-            Interactive experiments for looking inside small transformer models.
-          </p>
-        </div>
-        <div class="banner-duck">
-          <img
-            class="duck-sprite is-visible"
-            src="./assets/duck-bored.png"
-            alt="Pixel duck mascot in calm mode"
-            data-duck-bored
-          />
-          <img
-            class="duck-sprite"
-            src="./assets/duck-alert.png"
-            alt="Pixel duck mascot in alert mode"
-            data-duck-alert
-          />
-        </div>
-      </section>
-
-      <section class="terminal" aria-label="Jellybytes terminal">
-        <div class="terminal-topbar">
-          <div class="traffic-lights" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+      <header class="menu-bar">
+        <a class="brand" href="./">JELLYBYTES.DEV</a>
+        <nav class="main-menu" aria-label="Main menu">
+          <a class="is-active" href="#projects">Left</a><a href="#about">File</a><a href="mailto:info@jellybytes.dev">Command</a><a href="#about">Options</a><a href="https://github.com/diegovalverde">Right</a>
+        </nav>
+      </header>
+      <section class="workspace" id="projects" aria-label="Jellybytes workspace">
+        <section class="browser-pane" aria-labelledby="directory-title">
+          <div class="pane-titlebar"><span id="directory-title">~/jellybytes/experiments</span><span aria-hidden="true">[ ^ ]</span></div>
+          <div class="pane-head" aria-hidden="true"><span>Name</span><span>Type</span></div>
+          <div class="file-list" role="listbox" aria-label="Select an experiment">
+            <button class="file-row is-selected" type="button" role="option" aria-selected="true" data-project="othello"><span><b>▸</b> othello-gpt/</span><span>DIR</span></button>
+            <button class="file-row" type="button" role="option" aria-selected="false" data-project="addition"><span><b>▸</b> addition-gpt/</span><span>DIR</span></button>
+            <button class="file-row" type="button" role="option" aria-selected="false" data-project="about"><span><b>·</b> about.txt</span><span>TXT</span></button>
+            <button class="file-row" type="button" role="option" aria-selected="false" data-project="contact"><span><b>·</b> contact.txt</span><span>TXT</span></button>
           </div>
-          <div class="terminal-tabs" role="tablist" aria-label="Terminal tabs">
-            <button
-              class="terminal-tab is-active"
-              type="button"
-              role="tab"
-              aria-selected="true"
-              aria-controls="panel-projects"
-              id="tab-projects"
-              data-tab="projects"
-            >
-              Projects
-            </button>
-            <button
-              class="terminal-tab"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-about"
-              id="tab-about"
-              data-tab="about"
-            >
-              About
-            </button>
-            <button
-              class="terminal-tab"
-              type="button"
-              role="tab"
-              aria-selected="false"
-              aria-controls="panel-contact"
-              id="tab-contact"
-              data-tab="contact"
-            >
-              Contact
-            </button>
-          </div>
-          <button class="byte-button" type="button" data-duck>poke the byte</button>
-        </div>
-
-        <div class="terminal-menu" aria-label="Quick links">
-          <a href="https://github.com/diegovalverde">GitHub</a>
-          <span>·</span>
-          <a href="mailto:info@jellybytes.dev">info@jellybytes.dev</a>
-        </div>
-
-        <div class="terminal-body">
-          <section
-            class="terminal-panel is-active"
-            id="panel-projects"
-            role="tabpanel"
-            aria-labelledby="tab-projects"
-            data-panel="projects"
-          >
-            <div class="interpretability-intro">
-              <p class="terminal-prompt">&gt; select an experiment/</p>
-              <p>
-                These browser-native toys turn learned representations into
-                something you can inspect, perturb, and reason about.
-              </p>
-            </div>
-            <div class="experiment-grid" aria-label="Mechanistic interpretability experiments">
-              <article class="experiment-card">
-                <p class="experiment-number">01 / BOARD GAMES</p>
-                <h2>Othello-GPT<br />Probe Toy</h2>
-                <p>
-                  Explore how a transformer represents board state, legal moves,
-                  and move preferences while playing Othello.
-                </p>
-                <p class="experiment-stack">ONNX · React · TypeScript</p>
-                <a class="byte-button project-link" href="./othello-probe/">Open Othello toy <span aria-hidden="true">→</span></a>
-              </article>
-              <article class="experiment-card">
-                <p class="experiment-number">02 / ARITHMETIC</p>
-                <h2>Addition-GPT<br />Probe Toy</h2>
-                <p>
-                  Follow a tiny transformer as it adds two numbers and inspect
-                  the representations that carry digits and carries.
-                </p>
-                <p class="experiment-stack">ONNX · React · TypeScript</p>
-                <a class="byte-button project-link" href="./addition-probe/">Open addition toy <span aria-hidden="true">→</span></a>
-              </article>
-            </div>
-          </section>
-
-          <section
-            class="terminal-panel"
-            id="panel-about"
-            role="tabpanel"
-            aria-labelledby="tab-about"
-            hidden
-            data-panel="about"
-          >
-            <pre class="terminal-copy"><code>> cat about.txt
-
-Jellybytes makes small, legible software.
-
-This collection is for mechanistic interpretability:
-understanding what neural networks learn internally,
-one concrete experiment at a time.
-
-The old duck stays.</code></pre>
-          </section>
-
-          <section
-            class="terminal-panel"
-            id="panel-contact"
-            role="tabpanel"
-            aria-labelledby="tab-contact"
-            hidden
-            data-panel="contact"
-          >
-            <pre class="terminal-copy"><code>> cat contact.txt
-
-Email: info@jellybytes.dev
-GitHub: github.com/diegovalverde
-
-</code></pre>
-          </section>
-        </div>
+          <div class="pane-footer">4 items &nbsp;·&nbsp; use ↑ ↓ or click to inspect</div>
+        </section>
+        <section class="preview-pane" aria-live="polite">
+          <div class="pane-titlebar"><span data-preview-path>~/jellybytes/experiments/othello-gpt</span><span aria-hidden="true">[ ^ ]</span></div>
+          <article class="preview-content" data-preview="othello">
+            <p class="prompt">$ ./othello-gpt --inspect</p><p class="kicker">01 / BOARD GAMES</p>
+            <h1>Othello-GPT<br />Probe Toy</h1>
+            <p class="description">Explore how a transformer represents board state, legal moves, and move preferences while playing Othello.</p><p class="meta">ONNX · REACT · TYPESCRIPT</p>
+            <a class="launch-button" href="./othello-probe/">[ RUN EXPERIMENT → ]</a>
+          </article>
+          <article class="preview-content" data-preview="addition" hidden>
+            <p class="prompt">$ ./addition-gpt --inspect</p><p class="kicker">02 / ARITHMETIC</p>
+            <h1>Addition-GPT<br />Probe Toy</h1>
+            <p class="description">Follow a tiny transformer as it adds two numbers and inspect the representations that carry digits and carries.</p><p class="meta">ONNX · REACT · TYPESCRIPT</p>
+            <a class="launch-button" href="./addition-probe/">[ RUN EXPERIMENT → ]</a>
+          </article>
+          <article class="preview-content text-preview" id="about" data-preview="about" hidden>
+            <p class="prompt">$ cat about.txt</p><h1>Small, legible software.</h1>
+            <p class="description">Jellybytes makes browser-native experiments for understanding what neural networks learn internally—one concrete representation at a time.</p><p class="meta">STATUS: CURIOUS · DUCK: PRESENT</p>
+          </article>
+          <article class="preview-content text-preview" data-preview="contact" hidden>
+            <p class="prompt">$ cat contact.txt</p><h1>Say hello.</h1>
+            <p class="description">Email <a href="mailto:info@jellybytes.dev">info@jellybytes.dev</a><br />GitHub <a href="https://github.com/diegovalverde">github.com/diegovalverde</a></p><p class="meta">RESPONSE TIME: HUMAN-SCALE</p>
+          </article>
+          <div class="duck-console"><span class="duck-label">jellybytes-daemon&nbsp; RUNNING</span><button class="duck-button" type="button" data-duck aria-label="Poke the duck"><img class="duck-sprite is-visible" src="./assets/duck-bored.png" alt="Pixel duck mascot in calm mode" data-duck-bored /><img class="duck-sprite" src="./assets/duck-alert.png" alt="Pixel duck mascot in alert mode" data-duck-alert /></button></div>
+          <div class="pane-footer" data-status>othello-gpt/ selected · ready to inspect</div>
+        </section>
       </section>
+      <footer class="keybar" aria-label="Quick actions">
+        <a href="#projects"><b>1</b> Projects</a><a href="#about"><b>2</b> About</a><a href="mailto:info@jellybytes.dev"><b>3</b> Contact</a><a href="./othello-probe/"><b>4</b> Run demo</a><a href="https://github.com/diegovalverde"><b>9</b> GitHub</a><button type="button" data-duck><b>10</b> Poke duck</button>
+      </footer>
     </main>
-
     <script src="./main.js"></script>
   </body>
 </html>
