@@ -1,29 +1,43 @@
-const duckButton = document.querySelector("[data-duck]");
+const duckButtons = [...document.querySelectorAll("[data-duck]")];
 const boredDuck = document.querySelector("[data-duck-bored]");
 const alertDuck = document.querySelector("[data-duck-alert]");
-const tabs = [...document.querySelectorAll("[data-tab]")];
-const panels = [...document.querySelectorAll("[data-panel]")];
+const projectRows = [...document.querySelectorAll("[data-project]")];
+const previews = [...document.querySelectorAll("[data-preview]")];
+const previewPath = document.querySelector("[data-preview-path]");
+const status = document.querySelector("[data-status]");
 
-function activateTab(name) {
-  tabs.forEach((tab) => {
-    const active = tab.dataset.tab === name;
-    tab.classList.toggle("is-active", active);
-    tab.setAttribute("aria-selected", String(active));
+function selectProject(name) {
+  projectRows.forEach((row) => {
+    const active = row.dataset.project === name;
+    row.classList.toggle("is-selected", active);
+    row.setAttribute("aria-selected", String(active));
   });
 
-  panels.forEach((panel) => {
-    const active = panel.dataset.panel === name;
-    panel.classList.toggle("is-active", active);
-    panel.hidden = !active;
+  previews.forEach((preview) => {
+    preview.hidden = preview.dataset.preview !== name;
   });
+
+  const filename = name === "about" ? "about.txt" : name === "contact" ? "contact.txt" : `${name}-gpt`;
+  previewPath.textContent = `~/jellybytes/experiments/${filename}`;
+  status.textContent = `${filename} selected · ready to inspect`;
 }
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => activateTab(tab.dataset.tab));
+projectRows.forEach((row) => {
+  row.addEventListener("click", () => selectProject(row.dataset.project));
 });
 
-if (duckButton && boredDuck && alertDuck) {
-  duckButton.addEventListener("click", () => {
+document.addEventListener("keydown", (event) => {
+  if (!["ArrowUp", "ArrowDown"].includes(event.key)) return;
+  const currentIndex = projectRows.findIndex((row) => row.classList.contains("is-selected"));
+  const direction = event.key === "ArrowDown" ? 1 : -1;
+  const nextIndex = (currentIndex + direction + projectRows.length) % projectRows.length;
+  event.preventDefault();
+  projectRows[nextIndex].focus();
+  selectProject(projectRows[nextIndex].dataset.project);
+});
+
+if (duckButtons.length && boredDuck && alertDuck) {
+  duckButtons.forEach((duckButton) => duckButton.addEventListener("click", () => {
     boredDuck.classList.remove("is-visible");
     alertDuck.classList.add("is-visible");
 
@@ -31,5 +45,5 @@ if (duckButton && boredDuck && alertDuck) {
       alertDuck.classList.remove("is-visible");
       boredDuck.classList.add("is-visible");
     }, 420);
-  });
+  }));
 }
